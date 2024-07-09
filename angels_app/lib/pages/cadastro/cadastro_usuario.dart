@@ -1,6 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import '../widgets/custom_appbar.dart';
+import '../../widgets/custom_appbar.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 var formInputDecoration = InputDecoration(

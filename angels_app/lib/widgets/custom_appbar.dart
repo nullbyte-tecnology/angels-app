@@ -21,9 +21,9 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           },
         ),
       ),
-      title: const Text(
-        "Nova Conta",
-        style: TextStyle(
+      title: Text(
+        title,
+        style: const TextStyle(
             fontSize: 24,
             color: Color.fromRGBO(124, 58, 102, 1),
             fontWeight: FontWeight.bold),
