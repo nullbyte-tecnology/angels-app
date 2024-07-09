@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Angels App",
-      home: RegisterForm(),
+      home: HomePage(),
     );
   }
 }
