@@ -1,10 +1,9 @@
-import 'package:angels_app/widgets/card_gestante.dart';
 import 'package:flutter/material.dart';
-
+import 'package:angels_app/widgets/card_gestante.dart';
 import '../../widgets/barra_pesquisa.dart';
 
 class GestantesPage extends StatefulWidget {
-  const GestantesPage({super.key});
+  const GestantesPage({Key? key}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() {
@@ -74,7 +73,40 @@ class _GestantesPage extends State<GestantesPage> {
               ],
             ),
             const BarraPesquisa(),
-            const CardGestante(),
+            Expanded(
+              child: ListView(
+                children: [
+                  CardGestante(
+                    nome: 'Maria Elizangela da Silva',
+                    idade: 35,
+                    semanas: 20,
+                    quantidadeAcompanhamentos: 10,
+                    risco: "ESTAVEL",
+                  ),
+                  CardGestante(
+                    nome: 'Ana Carolina Oliveira',
+                    idade: 28,
+                    semanas: 15,
+                    quantidadeAcompanhamentos: 8,
+                    risco: "MODERADO",
+                  ),
+                  CardGestante(
+                    nome: 'Juliana Santos',
+                    idade: 30,
+                    semanas: 25,
+                    quantidadeAcompanhamentos: 12,
+                    risco: "ALTO",
+                  ),
+                  CardGestante(
+                    nome: 'Beatriz Almeida',
+                    idade: 32,
+                    semanas: 18,
+                    quantidadeAcompanhamentos: 6,
+                    risco: "ESTAVEL",
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
