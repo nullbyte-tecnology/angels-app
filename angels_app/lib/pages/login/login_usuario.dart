@@ -1,3 +1,5 @@
+import 'package:angels_app/pages/cadastro/cadastro_usuario.dart';
+import 'package:angels_app/pages/navbar/home.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import '../../widgets/custom_appbar.dart';
@@ -154,6 +156,10 @@ class LoginFormState extends State<LoginForm> {
                           onPressed: () {
                             if (_formKey.currentState!.validate()) {
                               print("validou");
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                    builder: (context) => HomePage()),
+                              );
                             }
                           },
                           style: ElevatedButton.styleFrom(
@@ -204,7 +210,11 @@ class LoginFormState extends State<LoginForm> {
                                 fontWeight: FontWeight.bold),
                             recognizer: TapGestureRecognizer()
                               ..onTap = () {
-                                // Ação ao clicar em "Cadastre-se"
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const RegisterForm()),
+                                );
                               },
                           ),
                         ],

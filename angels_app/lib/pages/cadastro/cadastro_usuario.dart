@@ -1,3 +1,4 @@
+import 'package:angels_app/pages/login/login_usuario.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import '../../widgets/custom_appbar.dart';
@@ -323,7 +324,10 @@ class _RegisterFormState extends State<RegisterForm> {
                             ),
                             recognizer: TapGestureRecognizer()
                               ..onTap = () {
-                                print("Clicou entrar");
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                      builder: (context) => const LoginForm()),
+                                );
                               },
                           ),
                         ],
