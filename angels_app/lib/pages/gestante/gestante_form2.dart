@@ -188,7 +188,6 @@ class _PregnantForm2State extends State<PregantForm2> {
                                 child: ElevatedButton(
                                   onPressed: () {
                                     if (_formKey.currentState!.validate()) {
-                                      print("validou");
                                       Navigator.of(context).push(
                                         MaterialPageRoute(
                                             builder: (context) => HomePage()),
@@ -216,7 +215,6 @@ class _PregnantForm2State extends State<PregantForm2> {
                                             builder: (context) =>
                                                 const PregantForm3()),
                                       );
-                                      print("validou");
                                     }
                                   },
                                   style: ElevatedButton.styleFrom(

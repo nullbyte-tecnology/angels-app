@@ -132,6 +132,11 @@ class _PregnantForm1State extends State<PregantForm1> {
                             if (value == null || value.isEmpty) {
                               return 'Por favor, digite o seu CPF';
                             }
+                            final cleanedCpf =
+                                value.replaceAll(RegExp(r'\D'), '');
+                            if (cleanedCpf.length != 11) {
+                              return 'O CPF deve ter 11 dígitos';
+                            }
                             return null;
                           },
                         ),
@@ -158,6 +163,45 @@ class _PregnantForm1State extends State<PregantForm1> {
                             if (value == null || value.isEmpty) {
                               return 'Por favor, digite a sua data de nascimento';
                             }
+
+                            final datePattern = RegExp(r'^\d{2}/\d{2}/\d{4}$');
+                            if (!datePattern.hasMatch(value)) {
+                              return 'Formato inválido. Use dd/mm/aaaa';
+                            }
+
+                            final parts = value.split('/');
+                            final day = int.tryParse(parts[0]);
+                            final month = int.tryParse(parts[1]);
+                            final year = int.tryParse(parts[2]);
+
+                            if (day == null ||
+                                month == null ||
+                                year == null ||
+                                month < 1 ||
+                                month > 12 ||
+                                day < 1 ||
+                                day > 31) {
+                              return 'Data inválida';
+                            }
+
+                            if ((month == 4 ||
+                                    month == 6 ||
+                                    month == 9 ||
+                                    month == 11) &&
+                                day > 30) {
+                              return 'Data inválida';
+                            }
+
+                            if (month == 2) {
+                              final isLeapYear =
+                                  (year % 4 == 0 && year % 100 != 0) ||
+                                      (year % 400 == 0);
+                              if (isLeapYear && day > 29 ||
+                                  !isLeapYear && day > 28) {
+                                return 'Data inválida';
+                              }
+                            }
+
                             return null;
                           },
                         ),
@@ -213,6 +257,14 @@ class _PregnantForm1State extends State<PregantForm1> {
                             if (value == null || value.isEmpty) {
                               return 'Por favor, digite o seu telefone';
                             }
+
+                            final cleanedPhone =
+                                value.replaceAll(RegExp(r'\D'), '');
+
+                            if (cleanedPhone.length != 11) {
+                              return 'O telefone deve ter 11 dígitos';
+                            }
+
                             return null;
                           },
                         ),
@@ -229,7 +281,6 @@ class _PregnantForm1State extends State<PregantForm1> {
                         child: ElevatedButton(
                           onPressed: () {
                             if (_formKey.currentState!.validate()) {
-                              print("validado");
                               Navigator.of(context).push(
                                 MaterialPageRoute(
                                     builder: (context) => const PregantForm2()),

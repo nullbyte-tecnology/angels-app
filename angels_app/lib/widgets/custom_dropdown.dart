@@ -47,8 +47,20 @@ class _CustomDropdownState extends State<CustomDropdown> {
         _CustomLabel(textLabel: widget.textLabel), // Now accessible
         DropdownButtonFormField<String>(
           value: selectedValue,
-          hint: const Text('Selecione'),
-          decoration: formInputDecoration,
+          style: internalInputTextStyle,
+          hint: const Text(
+            'Selecione',
+            style: internalInputTextStyle,
+          ),
+          decoration: formInputDecoration.copyWith(
+            enabledBorder: OutlineInputBorder(
+                borderSide: const BorderSide(color: Colors.transparent),
+                borderRadius: BorderRadius.circular(10)),
+            focusedBorder: OutlineInputBorder(
+                borderSide: const BorderSide(color: Colors.transparent),
+                borderRadius: BorderRadius.circular(10)),
+            filled: true,
+          ),
           onChanged: (String? newValue) {
             setState(() {
               selectedValue = newValue!;

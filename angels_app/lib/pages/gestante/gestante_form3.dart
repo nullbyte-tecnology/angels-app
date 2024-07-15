@@ -1,6 +1,7 @@
 import 'package:angels_app/pages/navbar/home.dart';
 import 'package:angels_app/widgets/custom_appbar.dart';
 import 'package:flutter/material.dart';
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 var formInputDecoration = InputDecoration(
   contentPadding: const EdgeInsets.symmetric(horizontal: 13),
@@ -52,6 +53,12 @@ class PregantForm3 extends StatefulWidget {
 class _PregnantForm3State extends State<PregantForm3> {
   final _formKey = GlobalKey<FormState>();
 
+  var numberFormatter= MaskTextInputFormatter(
+    mask: '##',
+    filter: {'#': RegExp(r'[0-9]')},
+    type: MaskAutoCompletionType.lazy,
+  );
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -73,6 +80,7 @@ class _PregnantForm3State extends State<PregantForm3> {
                         TextFormField(
                           style: internalInputTextStyle,
                           keyboardType: TextInputType.number,
+                          inputFormatters: [numberFormatter],
                           decoration: formInputDecoration.copyWith(
                             hintText: "Informe a quantidade",
                             hintStyle: const TextStyle(
@@ -98,6 +106,7 @@ class _PregnantForm3State extends State<PregantForm3> {
                         TextFormField(
                           style: internalInputTextStyle,
                           keyboardType: TextInputType.number,
+                          inputFormatters: [numberFormatter],
                           decoration: formInputDecoration.copyWith(
                             hintText: "Informe a quantidade",
                             hintStyle: const TextStyle(
@@ -123,6 +132,7 @@ class _PregnantForm3State extends State<PregantForm3> {
                         TextFormField(
                           style: internalInputTextStyle,
                           keyboardType: TextInputType.number,
+                          inputFormatters: [numberFormatter],
                           decoration: formInputDecoration.copyWith(
                             hintText: "Informe a quantidade",
                             hintStyle: const TextStyle(
@@ -148,6 +158,7 @@ class _PregnantForm3State extends State<PregantForm3> {
                         TextFormField(
                           style: internalInputTextStyle,
                           keyboardType: TextInputType.number,
+                          inputFormatters: [numberFormatter],
                           decoration: formInputDecoration.copyWith(
                             hintText: "Informe a quantidade",
                             hintStyle: const TextStyle(
@@ -173,6 +184,7 @@ class _PregnantForm3State extends State<PregantForm3> {
                         TextFormField(
                           style: internalInputTextStyle,
                           keyboardType: TextInputType.number,
+                          inputFormatters: [numberFormatter],
                           decoration: formInputDecoration.copyWith(
                             hintText: "Informe a quantidade",
                             hintStyle: const TextStyle(
@@ -201,7 +213,6 @@ class _PregnantForm3State extends State<PregantForm3> {
                                 MaterialPageRoute(
                                     builder: (context) => HomePage()),
                               );
-                              print("validou");
                             }
                           },
                           style: ElevatedButton.styleFrom(
