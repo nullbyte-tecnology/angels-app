@@ -2,6 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import '../../widgets/custom_appbar.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
+import 'package:angels_app/widgets/social_login_button.dart';
 
 var formInputDecoration = InputDecoration(
   contentPadding: const EdgeInsets.symmetric(horizontal: 13),
@@ -279,6 +280,30 @@ class _RegisterFormState extends State<RegisterForm> {
                           ),
                         )),
 
+                    const SizedBox(
+                      height: 15,
+                    ),
+                    const Text('Ou Acesse com'),
+                    const SizedBox(height: 8),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SocialLoginButton(
+                          icon: Icons.g_mobiledata,
+                          onPressed: () {},
+                        ),
+                        const SizedBox(width: 8),
+                        SocialLoginButton(
+                          icon: Icons.facebook,
+                          onPressed: () {},
+                        ),
+                        const SizedBox(width: 8),
+                        SocialLoginButton(
+                          icon: Icons.fingerprint,
+                          onPressed: () {},
+                        ),
+                      ],
+                    ),
                     const SizedBox(
                       height: 15,
                     ),
