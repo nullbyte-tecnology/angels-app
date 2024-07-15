@@ -1,3 +1,4 @@
+import 'package:angels_app/pages/navbar/home.dart';
 import 'package:angels_app/widgets/custom_appbar.dart';
 import 'package:flutter/material.dart';
 
@@ -196,6 +197,10 @@ class _PregnantForm3State extends State<PregantForm3> {
                         child: ElevatedButton(
                           onPressed: () {
                             if (_formKey.currentState!.validate()) {
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                    builder: (context) => HomePage()),
+                              );
                               print("validou");
                             }
                           },

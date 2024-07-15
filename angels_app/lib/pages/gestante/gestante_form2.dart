@@ -1,5 +1,7 @@
 // ignore_for_file: deprecated_member_use
 
+import 'package:angels_app/pages/gestante/gestante_form3.dart';
+import 'package:angels_app/pages/navbar/home.dart';
 import 'package:angels_app/widgets/custom_appbar.dart';
 import 'package:angels_app/widgets/custom_radiobutton.dart';
 import 'package:flutter/material.dart';
@@ -187,6 +189,10 @@ class _PregnantForm2State extends State<PregantForm2> {
                                   onPressed: () {
                                     if (_formKey.currentState!.validate()) {
                                       print("validou");
+                                      Navigator.of(context).push(
+                                        MaterialPageRoute(
+                                            builder: (context) => HomePage()),
+                                      );
                                     }
                                   },
                                   style: ElevatedButton.styleFrom(
@@ -205,6 +211,11 @@ class _PregnantForm2State extends State<PregantForm2> {
                                 child: ElevatedButton(
                                   onPressed: () {
                                     if (_formKey.currentState!.validate()) {
+                                      Navigator.of(context).push(
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                const PregantForm3()),
+                                      );
                                       print("validou");
                                     }
                                   },

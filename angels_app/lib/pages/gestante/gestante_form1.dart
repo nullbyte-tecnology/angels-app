@@ -1,3 +1,4 @@
+import 'package:angels_app/pages/gestante/gestante_form2.dart';
 import 'package:angels_app/widgets/custom_appbar.dart';
 import 'package:angels_app/widgets/custom_dropdown.dart';
 import 'package:flutter/material.dart';
@@ -167,8 +168,8 @@ class _PregnantForm1State extends State<PregantForm1> {
                     // Campo de estado civil
                     const Column(
                       children: [
-                        _CustomLabel(textLabel: "Estado Civil"),
                         CustomDropdown(
+                          textLabel: "Estado Civil",
                           itens: ['Solteira', 'Casada', 'Divorciada', 'Viúva'],
                         )
                       ],
@@ -178,8 +179,8 @@ class _PregnantForm1State extends State<PregantForm1> {
                     // Campo de estado civil
                     const Column(
                       children: [
-                        _CustomLabel(textLabel: "Escolaridade"),
                         CustomDropdown(
+                          textLabel: "Escolaridade",
                           itens: [
                             'Fundamental Incompleto',
                             'Fundamental Completo',
@@ -228,7 +229,11 @@ class _PregnantForm1State extends State<PregantForm1> {
                         child: ElevatedButton(
                           onPressed: () {
                             if (_formKey.currentState!.validate()) {
-                              print("validou");
+                              print("validado");
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                    builder: (context) => const PregantForm2()),
+                              );
                             }
                           },
                           style: ElevatedButton.styleFrom(
