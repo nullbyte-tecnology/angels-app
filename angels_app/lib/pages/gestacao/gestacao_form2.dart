@@ -1,8 +1,7 @@
 import 'package:angels_app/pages/gestante/gestante_form2.dart';
 import 'package:angels_app/widgets/custom_appbar.dart';
-import 'package:angels_app/widgets/custom_dropdown.dart';
+import 'package:angels_app/widgets/custom_radiobutton_with_text.dart';
 import 'package:flutter/material.dart';
-import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 var formInputDecoration = InputDecoration(
   contentPadding: const EdgeInsets.symmetric(horizontal: 13),
@@ -69,6 +68,20 @@ class _GestacaoForm2State extends State<GestacaoForm2> {
                 key: _formKey,
                 child: Column(
                   children: [
+                    const _CustomLabel(
+                        textLabel: "A gestante possui alguma alergia?"),
+                    const CustomRadioButtonText(
+                      hintText: "Qual/Quais? (separe por ponto)",
+                    ),
+                    const SizedBox(
+                      height: 12,
+                    ),
+                    const _CustomLabel(
+                        textLabel: "A gestante possui alguma doença crônica?"),
+                    const CustomRadioButtonText(
+                      hintText: "Qual/Quais? (separe por ponto)",
+                    ),
+
                     const SizedBox(
                       height: 30,
                     ),

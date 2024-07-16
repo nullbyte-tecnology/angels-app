@@ -1,6 +1,5 @@
 import 'package:angels_app/pages/gestante/gestante_form2.dart';
 import 'package:angels_app/widgets/custom_appbar.dart';
-import 'package:angels_app/widgets/custom_dropdown.dart';
 import 'package:flutter/material.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
@@ -104,7 +103,7 @@ class _GestacaoForm1State extends State<GestacaoForm1> {
                           ),
                           validator: (value) {
                             if (value == null || value.isEmpty) {
-                              return 'Por favor, digite o seu nome completo';
+                              return 'Por favor, digite o nome completo da gestante';
                             }
                             return null;
                           },
@@ -130,7 +129,7 @@ class _GestacaoForm1State extends State<GestacaoForm1> {
                           ),
                           validator: (value) {
                             if (value == null || value.isEmpty) {
-                              return 'Por favor, digite o seu CPF';
+                              return 'Por favor, digite o CPF da gestante';
                             }
                             final cleanedCpf =
                                 value.replaceAll(RegExp(r'\D'), '');
@@ -161,7 +160,7 @@ class _GestacaoForm1State extends State<GestacaoForm1> {
                           ),
                           validator: (value) {
                             if (value == null || value.isEmpty) {
-                              return 'Por favor, digite a sua data de nascimento';
+                              return 'Por favor, digite a data de nascimento da gestante';
                             }
 
                             final datePattern = RegExp(r'^\d{2}/\d{2}/\d{4}$');
@@ -223,7 +222,7 @@ class _GestacaoForm1State extends State<GestacaoForm1> {
                           ),
                           validator: (value) {
                             if (value == null || value.isEmpty) {
-                              return 'Por favor, digite o seu endereço';
+                              return 'Por favor, digite o endereço da gestante';
                             }
                             return null;
                           },
@@ -246,7 +245,7 @@ class _GestacaoForm1State extends State<GestacaoForm1> {
                           ),
                           validator: (value) {
                             if (value == null || value.isEmpty) {
-                              return 'Por favor, digite o seu email';
+                              return 'Por favor, digite o email da gestante';
                             }
                             return null;
                           },
@@ -272,7 +271,7 @@ class _GestacaoForm1State extends State<GestacaoForm1> {
                           ),
                           validator: (value) {
                             if (value == null || value.isEmpty) {
-                              return 'Por favor, digite o seu telefone';
+                              return 'Por favor, digite o telefone da gestante';
                             }
 
                             final cleanedPhone =
