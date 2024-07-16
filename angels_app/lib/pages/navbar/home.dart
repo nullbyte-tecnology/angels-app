@@ -1,3 +1,4 @@
+import 'package:angels_app/pages/gestacao/gestacao_form1.dart';
 import 'package:angels_app/pages/gestante/gestante_form1.dart';
 import 'package:angels_app/pages/navbar/gestantes.dart';
 import 'package:angels_app/pages/navbar/perfil.dart';
@@ -14,7 +15,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int _selectedIndex = 0;
 
-  final List<Widget> _pages = [GestantesPage(), PregantForm1(), PerfilPage()];
+  final List<Widget> _pages = [GestantesPage(), GestacaoForm1(), PerfilPage()];
 
   void _onDestinationSelected(int index) {
     setState(() {

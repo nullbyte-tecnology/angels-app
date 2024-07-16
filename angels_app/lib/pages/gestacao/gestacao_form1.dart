@@ -56,6 +56,7 @@ class _GestacaoForm1State extends State<GestacaoForm1> {
   final TextEditingController _dateController = TextEditingController();
   final TextEditingController _cpfController = TextEditingController();
   final TextEditingController _phoneController = TextEditingController();
+  final TextEditingController _nameController = TextEditingController();
 
   final String proximaPagina = './pregnant_form_2.dart';
 
@@ -94,6 +95,7 @@ class _GestacaoForm1State extends State<GestacaoForm1> {
                       children: [
                         const _CustomLabel(textLabel: "Nome Completo"),
                         TextFormField(
+                          controller: _nameController,
                           style: internalInputTextStyle,
                           decoration: formInputDecoration.copyWith(
                             hintText: "Nome Sobrenome",
@@ -208,14 +210,14 @@ class _GestacaoForm1State extends State<GestacaoForm1> {
                     ),
                     const SizedBox(height: 12.0),
 
-                    // Campo de nome
+                    // Campo de endereço
                     Column(
                       children: [
                         const _CustomLabel(textLabel: "Endereço"),
                         TextFormField(
                           style: internalInputTextStyle,
                           decoration: formInputDecoration.copyWith(
-                            hintText: "Rua X, n° xx, bairo xxxx",
+                            hintText: "Rua X, n° xx, bairro xxxx",
                             hintStyle: const TextStyle(
                               color: Color.fromRGBO(177, 72, 138, 1),
                             ),
@@ -297,10 +299,20 @@ class _GestacaoForm1State extends State<GestacaoForm1> {
                         child: ElevatedButton(
                           onPressed: () {
                             if (_formKey.currentState!.validate()) {
+                              final cpf = _cpfController.text;
+                              final nome = _nameController.text;
+                              final dataNascimento = _dateController.text;
+                              final telefone = _phoneController.text;
+
                               Navigator.of(context).push(
                                 MaterialPageRoute(
-                                    builder: (context) =>
-                                        const GestacaoForm2()),
+                                  builder: (context) => GestacaoForm2(
+                                    cpf: cpf,
+                                    nome: nome,
+                                    dataNascimento: dataNascimento,
+                                    telefone: telefone,
+                                  ),
+                                ),
                               );
                             }
                           },

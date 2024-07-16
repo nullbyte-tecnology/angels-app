@@ -1,3 +1,5 @@
+import 'package:angels_app/pages/gestante/gestante_form1.dart';
+import 'package:angels_app/pages/navbar/gestantes.dart';
 import 'package:angels_app/pages/navbar/home.dart';
 import 'package:angels_app/widgets/custom_appbar.dart';
 import 'package:angels_app/widgets/custom_radiobutton_with_text.dart';
@@ -44,7 +46,17 @@ class _CustomLabel extends StatelessWidget {
 }
 
 class GestacaoForm2 extends StatefulWidget {
-  const GestacaoForm2({super.key});
+  final String cpf;
+  final String nome;
+  final String dataNascimento;
+  final String telefone;
+
+  const GestacaoForm2(
+      {required this.cpf,
+      required this.nome,
+      required this.dataNascimento,
+      required this.telefone,
+      super.key});
 
   @override
   State<GestacaoForm2> createState() => _GestacaoForm2State();
@@ -123,10 +135,24 @@ class _GestacaoForm2State extends State<GestacaoForm2> {
                         child: ElevatedButton(
                           onPressed: () {
                             if (_formKey.currentState!.validate()) {
-                              Navigator.of(context).push(
-                                MaterialPageRoute(
-                                    builder: (context) => HomePage()),
-                              );
+                              final cleanedCpf =
+                                  widget.cpf.replaceAll(RegExp(r'\D'), '');
+
+                              if (cleanedCpf == "12345678990") {
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                      builder: (context) => PregnantForm1(
+                                          cpf: widget.cpf,
+                                          nome: widget.nome,
+                                          dataNascimento: widget.dataNascimento,
+                                          telefone: widget.telefone)),
+                                );
+                              } else {
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                      builder: (context) => HomePage()),
+                                );
+                              }
                             }
                           },
                           style: ElevatedButton.styleFrom(
