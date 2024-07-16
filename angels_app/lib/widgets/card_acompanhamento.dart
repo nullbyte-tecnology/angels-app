@@ -1,4 +1,4 @@
-import 'package:angels_app/widgets/custom_popup_acompanhamento.dart';
+import 'package:angels_app/widgets/acompanhamento_dialog.dart';
 import 'package:flutter/material.dart';
 
 class CardAcompanhamento extends StatelessWidget {
@@ -10,7 +10,7 @@ class CardAcompanhamento extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        CustomPopupAcompanhamento.show(context, this.data);
+        AcompanhamentoDialog.show(context, this.data);
       },
       child: Container(
         padding: const EdgeInsets.all(16.0),

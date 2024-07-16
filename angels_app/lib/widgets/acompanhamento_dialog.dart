@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class CustomPopupAcompanhamento {
+class AcompanhamentoDialog {
   static void show(BuildContext context, String data) {
     showDialog(
       context: context,
