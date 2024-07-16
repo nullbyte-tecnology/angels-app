@@ -25,41 +25,69 @@ class AcompanhamentoDialog {
                   color: Color.fromRGBO(124, 58, 102, 1), fontSize: 15),
             ),
             SizedBox(height: 16.0),
-            Text(
-              "Dados de Saúde da Gestante",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+            Container(
+              width: 500,
+              color: Colors.white,
+              padding: EdgeInsets.all(16.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Center(
+                    child: Text(
+                      "Dados de Saúde da Gestante",
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 17,
+                          color: Color.fromRGBO(124, 58, 102, 1)),
+                    ),
+                  ),
+                  SizedBox(height: 8.0),
+                  Text(
+                    "Peso atual:",
+                    style: TextStyle(
+                        color: Color.fromRGBO(124, 58, 102, 1), fontSize: 14),
+                  ),
+                  Text(
+                    "Idade gestacional:",
+                    style: TextStyle(
+                        color: Color.fromRGBO(124, 58, 102, 1), fontSize: 14),
+                  ),
+                  Text(
+                    "Pressão arterial:",
+                    style: TextStyle(
+                        color: Color.fromRGBO(124, 58, 102, 1), fontSize: 14),
+                  ),
+                ],
+              ),
             ),
-            SizedBox(height: 4.0),
-            Text(
-              "Peso atual:",
-              style: TextStyle(
-                  color: Color.fromRGBO(124, 58, 102, 1), fontSize: 15),
-            ),
-            Text(
-              "Idade gestacional:",
-              style: TextStyle(
-                  color: Color.fromRGBO(124, 58, 102, 1), fontSize: 15),
-            ),
-            Text(
-              "Pressão arterial:",
-              style: TextStyle(
-                  color: Color.fromRGBO(124, 58, 102, 1), fontSize: 15),
-            ),
-            SizedBox(height: 20.0),
-            Text(
-              "Dados de Saúde do Feto",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-            ),
-            SizedBox(height: 4.0),
-            Text(
-              "Batimentos cardíacos do feto:",
-              style: TextStyle(
-                  color: Color.fromRGBO(124, 58, 102, 1), fontSize: 15),
-            ),
-            Text(
-              "Altura uterina:",
-              style: TextStyle(
-                  color: Color.fromRGBO(124, 58, 102, 1), fontSize: 15),
+            SizedBox(height: 16.0),
+            Container(
+              width: 500,
+              color: Colors.white,
+              padding: EdgeInsets.all(16.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Dados de Saúde do Feto",
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 17,
+                        color: Color.fromRGBO(124, 58, 102, 1)),
+                  ),
+                  SizedBox(height: 8.0),
+                  Text(
+                    "Batimentos cardíacos do feto:",
+                    style: TextStyle(
+                        color: Color.fromRGBO(124, 58, 102, 1), fontSize: 14),
+                  ),
+                  Text(
+                    "Altura uterina:",
+                    style: TextStyle(
+                        color: Color.fromRGBO(124, 58, 102, 1), fontSize: 14),
+                  ),
+                ],
+              ),
             ),
           ],
         ),
