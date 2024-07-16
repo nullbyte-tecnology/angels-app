@@ -1,4 +1,4 @@
-import 'package:angels_app/pages/gestante/gestante_form2.dart';
+import 'package:angels_app/pages/navbar/home.dart';
 import 'package:angels_app/widgets/custom_appbar.dart';
 import 'package:angels_app/widgets/custom_radiobutton_with_text.dart';
 import 'package:flutter/material.dart';
@@ -83,7 +83,37 @@ class _GestacaoForm2State extends State<GestacaoForm2> {
                     ),
 
                     const SizedBox(
-                      height: 30,
+                      height: 12,
+                    ),
+                    const _CustomLabel(
+                        textLabel:
+                            "A gestante usa algum medicamento continuamente?"),
+                    const CustomRadioButtonText(
+                      hintText: "Qual/Quais? (separe por ponto)",
+                    ),
+
+                    const SizedBox(
+                      height: 12,
+                    ),
+                    const _CustomLabel(
+                        textLabel: "Deseja adicionar alguma prescrição?"),
+                    const CustomRadioButtonText(
+                      hintText: "Qual/Quais? (separe por ponto)",
+                    ),
+                    const SizedBox(
+                      height: 12,
+                    ),
+
+                    const SizedBox(
+                      height: 12,
+                    ),
+                    const _CustomLabel(
+                        textLabel: "Deseja adicionar alguma observação?"),
+                    const CustomRadioButtonText(
+                      hintText: "Qual/Quais? (separe por ponto)",
+                    ),
+                    const SizedBox(
+                      height: 25,
                     ),
 
                     // Botão de submeter
@@ -95,7 +125,7 @@ class _GestacaoForm2State extends State<GestacaoForm2> {
                             if (_formKey.currentState!.validate()) {
                               Navigator.of(context).push(
                                 MaterialPageRoute(
-                                    builder: (context) => const PregantForm2()),
+                                    builder: (context) => HomePage()),
                               );
                             }
                           },
@@ -104,7 +134,7 @@ class _GestacaoForm2State extends State<GestacaoForm2> {
                                 const Color.fromRGBO(177, 72, 138, 1),
                           ),
                           child: const Text(
-                            'Continuar',
+                            'Finalizar',
                             style: TextStyle(color: Colors.white, fontSize: 24),
                           ),
                         )),

@@ -1,4 +1,4 @@
-import 'package:angels_app/pages/gestante/gestante_form2.dart';
+import 'package:angels_app/pages/gestacao/gestacao_form2.dart';
 import 'package:angels_app/widgets/custom_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
@@ -299,7 +299,8 @@ class _GestacaoForm1State extends State<GestacaoForm1> {
                             if (_formKey.currentState!.validate()) {
                               Navigator.of(context).push(
                                 MaterialPageRoute(
-                                    builder: (context) => const PregantForm2()),
+                                    builder: (context) =>
+                                        const GestacaoForm2()),
                               );
                             }
                           },
