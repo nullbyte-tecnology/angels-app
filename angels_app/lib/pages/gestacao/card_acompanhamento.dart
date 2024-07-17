@@ -1,4 +1,4 @@
-import 'package:angels_app/widgets/acompanhamento_dialog.dart';
+import 'package:angels_app/pages/gestacao/acompanhamento_dialog.dart';
 import 'package:flutter/material.dart';
 
 class CardAcompanhamento extends StatelessWidget {

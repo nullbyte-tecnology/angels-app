@@ -1,14 +1,15 @@
-import 'package:angels_app/widgets/card_acompanhamento.dart';
+import 'package:angels_app/pages/gestacao/acompanhamento_form.dart';
+import 'package:angels_app/pages/gestacao/card_acompanhamento.dart';
 import 'package:angels_app/widgets/icon_with_text.dart';
 import 'package:flutter/material.dart';
 
-class DetalhesGestante extends StatelessWidget {
+class DetalhesGestacao extends StatelessWidget {
   final String nome;
   final int idade;
   final int semanas;
   final String risco;
 
-  DetalhesGestante({
+  DetalhesGestacao({
     required this.nome,
     required this.idade,
     required this.semanas,
@@ -253,7 +254,10 @@ class DetalhesGestante extends StatelessWidget {
                         borderRadius: BorderRadius.circular(20.0),
                       ),
                       child: TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => AcompanhamentoForm()));
+                        },
                         child: const Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [

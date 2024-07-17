@@ -1,16 +1,16 @@
-import 'package:angels_app/pages/gestante/detalhes_gestante.dart';
+import 'package:angels_app/pages/gestacao/detalhes_gestacao.dart';
 import 'package:flutter/material.dart';
 
-import 'icon_with_text.dart';
+import '../../widgets/icon_with_text.dart';
 
-class CardGestante extends StatelessWidget {
+class CardGestacao extends StatelessWidget {
   final String nome;
   final int idade;
   final int semanas;
   final int quantidadeAcompanhamentos;
   final String risco;
 
-  const CardGestante({
+  const CardGestacao({
     required this.nome,
     required this.idade,
     required this.semanas,
@@ -47,7 +47,7 @@ class CardGestante extends StatelessWidget {
       onTap: () {
         Navigator.of(context).push(
           MaterialPageRoute(
-              builder: (context) => DetalhesGestante(
+              builder: (context) => DetalhesGestacao(
                     nome: nome,
                     idade: idade,
                     semanas: semanas,
